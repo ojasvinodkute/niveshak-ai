@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Niveshak AI – Indian stock picks, explained simply</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="demo">Demo mode: prices are simulated sample data, not live NSE prices. See README to plug in real data.</div>
+<header><b class="logo">Niveshak AI</b><span>Indian stocks, explained before you invest</span></header>
+<main>
+<section class="setup">
+  <h1>Let's find stocks that fit you</h1>
+  <p class="lead">No jargon. Tell us two things, and we'll show which stocks look healthy, and the reasoning behind each one.</p>
+  <label>How much do you want to invest? (₹)
+    <input id="amt" type="number" min="1000" step="1000" value="100000"></label>
+  <fieldset><legend>If your money drops 20% for a few months, you would...</legend>
+    <div class="chips" id="risk">
+      <button data-r="low" class="on">Panic. I want steady, calmer stocks</button>
+      <button data-r="med">Wait it out</button>
+      <button data-r="high">Buy more. I accept big swings</button>
+    </div></fieldset>
+  <button class="go" id="go">Show my stock picks</button>
+</section>
+<section id="results" hidden>
+  <h2>Suggested split of your <span id="amtShow"></span></h2>
+  <p class="note">Spreading money across several stocks means one bad pick hurts less.</p>
+  <div id="split"></div>
+  <h2>Ranked picks</h2>
+  <div id="cards"></div>
+</section>
+<section id="detail" hidden>
+  <button class="back" id="back">Back to picks</button>
+  <h2 id="dName"></h2>
+  <div class="scorebar"><div id="dScore"></div></div>
+  <p id="dVerdict" class="lead"></p>
+  <canvas id="chart" height="280"></canvas>
+  <div class="legend"><i style="background:#14213D"></i>Price <i style="background:#E07A1F"></i>50-day average <i style="background:#0F766E"></i>200-day average</div>
+  <h3>Why the AI thinks this</h3>
+  <ul id="reasons"></ul>
+  <h3>What could you make?</h3>
+  <div class="calc">
+    <label>Amount in this stock (₹) <input id="cAmt" type="number" min="1000" step="1000"></label>
+    <label>Keep it for <b id="yrs">3</b> years <input id="cYrs" type="range" min="1" max="10" value="3"></label>
+  </div>
+  <div id="proj"></div>
+  <p class="note" id="projNote"></p>
+</section>
+<section class="learn"><h2>Words you'll see</h2>
+<dl><dt>Volatility</dt><dd>How wildly the price jumps around. Higher means more rollercoaster.</dd>
+<dt>Drawdown</dt><dd>The biggest fall from a peak. It shows how much pain past holders felt.</dd>
+<dt>Moving average</dt><dd>The average price over recent days. Price above it usually means an uptrend.</dd>
+<dt>RSI</dt><dd>A 0–100 gauge. Above 70 often means the stock ran up too fast; below 30, it fell too fast.</dd></dl></section>
+</main>
+<footer>Educational tool only. Not SEBI-registered investment advice. Past patterns don't guarantee future returns, and you can lose money. Talk to a SEBI-registered adviser before investing.</footer>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>

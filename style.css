@@ -1,0 +1,47 @@
+:root{--ink:#14213D;--bg:#F6F7FB;--card:#fff;--line:#DDE1EA;--acc:#0F766E;--up:#1B7F4B;--down:#C2410C;--warn:#E07A1F;--mut:#5B6478}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800}h2{font-size:1.6rem;margin-top:1.6em}h3{font-size:1.2rem;margin-top:1.6em}
+.demo{background:#FFF3DC;color:#6B4200;text-align:center;padding:.5rem 1rem;font-size:.9rem}
+header{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding:1rem clamp(1rem,5vw,3rem);border-bottom:1px solid var(--line)}
+.logo{font-size:1.4rem;color:var(--acc)}header span{color:var(--mut)}
+main{max-width:980px;margin:auto;padding:1rem clamp(1rem,4vw,2rem) 3rem}
+.lead{color:var(--mut);max-width:60ch}.note{color:var(--mut);font-size:.95rem}
+.setup{padding-top:2rem;max-width:640px}
+label{display:block;font-weight:600;margin:1.2rem 0}
+input[type=number]{display:block;width:100%;margin-top:.4rem;padding:.7rem .9rem;font:inherit;border:1px solid var(--line);border-radius:8px}
+fieldset{border:0;padding:0;margin:1.2rem 0}legend{font-weight:600;margin-bottom:.5rem}
+.chips{display:grid;gap:.5rem}
+.chips button{text-align:left;padding:.8rem 1rem;font:inherit;background:var(--card);border:1.5px solid var(--line);border-radius:8px;cursor:pointer}
+.chips button.on{border-color:var(--acc);background:#E6F4F2;font-weight:600}
+.go,.back{font:inherit;font-weight:600;border:0;border-radius:8px;cursor:pointer}
+.go{background:var(--acc);color:#fff;padding:.9rem 1.6rem}
+.back{background:none;color:var(--acc);padding:.5rem 0}
+button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+#split{display:flex;height:2.6rem;border-radius:8px;overflow:hidden;margin:.8rem 0}
+#split div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:600;min-width:0;overflow:hidden}
+.splitlist{display:grid;gap:.3rem;margin:.6rem 0;font-size:.95rem}
+#cards{display:grid;gap:.8rem}
+.card{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.card:hover{border-color:var(--acc)}
+.rank{font:800 1.6rem "Bricolage Grotesque";color:var(--mut)}
+.card b{display:block}.card small{color:var(--mut)}
+.pill{padding:.25rem .7rem;border-radius:99px;font-weight:600;font-size:.85rem;white-space:nowrap}
+.strong{background:#DDF3E6;color:var(--up)}.mixed{background:#FFEFD6;color:#8A5200}.weak{background:#FBE3D8;color:var(--down)}
+.scorebar{height:10px;background:var(--line);border-radius:9px;overflow:hidden}#dScore{height:100%;background:var(--acc)}
+canvas{width:100%;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-top:.8rem}
+.legend{font-size:.85rem;color:var(--mut)}.legend i{display:inline-block;width:1rem;height:3px;margin:0 .3rem 3px .8rem}
+#reasons{padding:0;list-style:none;display:grid;gap:.5rem}
+#reasons li{padding:.7rem 1rem;background:var(--card);border-left:4px solid var(--up);border-radius:6px}
+#reasons li.w{border-color:var(--warn)}#reasons li.b{border-color:var(--down)}
+.calc{display:grid;gap:0 2rem;grid-template-columns:1fr 1fr}
+@media(max-width:600px){.calc{grid-template-columns:1fr}.card{grid-template-columns:auto 1fr}.card .pill{grid-column:2;justify-self:start}}
+input[type=range]{width:100%;accent-color:var(--acc)}
+#proj{display:grid;gap:.6rem;grid-template-columns:repeat(3,1fr)}
+#proj div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.9rem}
+#proj small{color:var(--mut);display:block}#proj b{font:800 1.3rem "Bricolage Grotesque"}
+@media(max-width:600px){#proj{grid-template-columns:1fr}}
+.learn dt{font-weight:600;margin-top:.8rem}.learn dd{margin:0;color:var(--mut)}
+footer{padding:1.5rem clamp(1rem,5vw,3rem);border-top:1px solid var(--line);color:var(--mut);font-size:.88rem}
+@media(prefers-reduced-motion:no-preference){#results,#detail{animation:in .3s}@keyframes in{from{opacity:0}}}
